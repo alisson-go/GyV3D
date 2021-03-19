@@ -60,10 +60,11 @@
     function initVertexBuffers(gl) {
         // Vertices
         var dim = 2;
-        var vertices = new Float32Array([
-            0, 0.5,   // Vertice #1
-            -0.5, -0.5,  // Vertice #2
-            0.5, -0.5 // Vertice #3
+        var vertices2 = new Float32Array([
+            -0.3, 0.3, 0.3, -0.3, 0.3, -0.3,
+            -0.3, 0.3, 0.3, -0.3, -0.3, -0.3,
+            -0.5, 0.5, 0.5, 0.5, 0.5, -0.5,
+            -0.5, 0.5, 0.5, -0.5, -0.5, -0.5
         ]);
 
         // Create a buffer object
@@ -73,7 +74,7 @@
             return -1;
         }
         gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+        gl.bufferData(gl.ARRAY_BUFFER, vertices2, gl.STATIC_DRAW);
 
         // Assign the vertices in buffer object to a_Position variable
         var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
